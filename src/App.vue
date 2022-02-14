@@ -14,17 +14,13 @@
             <div class="state-question-card" v-if="currentCard === 'state-question'">
               <h3>Which state or territory were you vaccinated in?</h3>
               <div class="mb-3">
-                <!-- <vue-typeahead-bootstrap
-                  :data="stateProviders"
-                  v-model="selectedStateProvider"
-                  placeholder="Start typing a name..."
-                /> -->
-
-                <!-- <label for="exampleDataList" class="form-label">Datalist example</label> -->
-                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."
+                <!-- states datalist -->
+                <input class="form-control"
+                       list="states-datalist"
+                       placeholder="Enter a state or territory..."
                        v-model="selectedStateProvider"
                 >
-                <datalist id="datalistOptions">
+                <datalist id="states-datalist">
                   <option v-for="stateProvider in [...stateProviders].sort()"
                           :value="stateProvider"
                           :key="stateProvider"
